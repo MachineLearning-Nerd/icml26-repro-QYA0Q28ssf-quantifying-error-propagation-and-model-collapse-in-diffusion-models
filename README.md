@@ -28,6 +28,7 @@ settings; a measured optimistic Fashion CPU lower bound is 6.59 hours. These
 substitutions are why C6 is BLOCKED rather than passed.
 
 - [Illustrated technical report](reports/reproduction/report.md)
+- [Publication and post-release receipt](reports/reproduction/release_receipt.md)
 - [Reproducibility command ledger](reports/reproduction/command_ledger.md)
 - [Tutorial-style marimo notebook](notebooks/reproduction.py)
 - [Exact published Space text mirror](space_candidate/pages/index.md)
