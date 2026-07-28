@@ -1,0 +1,21 @@
+{
+  "run_id": "887cb735-56a2-405e-b98e-5ec5e9d37245",
+  "git_sha": "970446a85031a49c66d33be7ee07f33452ac8c9a",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "estimated_cpu_workers": 8,
+  "advertised_vcpu": 8,
+  "torch_threads": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 44.51810366101563,
+  "job_duration_seconds": 69,
+  "missing_protocol_fields": 11,
+  "tiny_model_parameters": 737,
+  "training_images_per_second": 15249.63238269892,
+  "inference_image_steps_per_second": 56676.55883945532,
+  "optimistic_total_lower_bound_hours": 6.590288962797786,
+  "negative_control": "complete mock protocol passed the same schema checker",
+  "C6_verdict": "BLOCKED"
+}

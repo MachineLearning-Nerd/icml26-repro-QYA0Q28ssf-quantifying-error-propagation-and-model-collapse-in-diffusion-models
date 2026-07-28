@@ -1,5 +1,5 @@
 {
-  "campaign_stage": "c6_route2_fashion_protocol_and_cpu_lower_bound",
+  "campaign_stage": "c6_route3_cifar_source_contract_audit",
   "paper_id": "2602.16601v2",
   "space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
   "seeds": [57721, 61169, 65537, 70001, 74959],
@@ -9,6 +9,7 @@
     "claim23_observability",
     "claim45_global",
     "claim6_gmm_population",
-    "claim6_fashion_feasibility"
+    "claim6_fashion_feasibility",
+    "claim6_cifar_audit"
   ]
 }

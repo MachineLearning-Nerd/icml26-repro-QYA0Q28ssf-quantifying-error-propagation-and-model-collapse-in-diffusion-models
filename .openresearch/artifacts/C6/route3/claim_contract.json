@@ -1,0 +1,7 @@
+{
+  "claim_id": "C6",
+  "route": 3,
+  "interpretation": "The imported claim includes a CIFAR-10 alpha-dependent drift/stability confirmation. Test whether Appendix G.3 defines one reproducible CIFAR-10 experiment and publishes evidence that directly bears on that alpha tradeoff.",
+  "pass_condition": "Every material CIFAR model, training, metric, seed, and observability field is specified and the source exposes per-alpha collapse/stability evidence. A fully populated mock protocol must pass the same schema checker.",
+  "verdict_rule": "Under-specification or absent direct evidence yields BLOCKED, never FALSIFIED. Preserve any positive CIFAR evidence that the source does provide."
+}
