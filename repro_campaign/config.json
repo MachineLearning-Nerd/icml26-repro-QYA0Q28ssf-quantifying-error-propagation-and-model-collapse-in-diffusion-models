@@ -1,9 +1,10 @@
 {
-  "campaign_stage": "historical_rejected_baseline",
+  "campaign_stage": "c1_exact_certificate_and_10d_gmm_calibration",
   "paper_id": "2602.16601v2",
   "space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
-  "seeds": [1729],
+  "seeds": [1729, 2718, 31415, 16180, 14142],
   "accepted_claim_modules": [
-    "historical_baseline"
+    "historical_baseline",
+    "claim1_girsanov"
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "claim_id": "C1",
+  "source_sha256": "472fb9e246aea7c5d1e643d5755f034f005d1f2bbb61f86371bae855f62765e3",
+  "source_anchor": "#S3.Thmtheorem1",
+  "assumption_anchors": ["#S3.I1.i1", "#S3.I1.i2"],
+  "symbols": {
+    "P_star": "ideal reverse-path measure",
+    "P_hat": "learned reverse-path measure",
+    "pi": "endpoint marginalization map",
+    "Lambda": "dP_hat/dP_star",
+    "eps_hat2": "E_P_hat integral ||e||^2 ds"
+  },
+  "steps": [
+    {
+      "id": "girsanov_log_density",
+      "rule": "A2_GIRSANOV_UNDER_LEARNED_MEASURE",
+      "result": "log Lambda = stochastic_integral_P_hat + 0.5 * energy_path",
+      "coefficient": 0.5,
+      "depends_on": ["A2"]
+    },
+    {
+      "id": "center_stochastic_integral",
+      "rule": "ITO_INTEGRAL_HAS_ZERO_MEAN",
+      "result": "E_P_hat[stochastic_integral_P_hat] = 0",
+      "depends_on": ["A1", "A2"]
+    },
+    {
+      "id": "path_kl_identity",
+      "rule": "KL_IS_EXPECTED_LOG_DENSITY",
+      "result": "KL(P_hat || P_star) = 0.5 * eps_hat2",
+      "coefficient": 0.5,
+      "depends_on": ["girsanov_log_density", "center_stochastic_integral"]
+    },
+    {
+      "id": "endpoint_contraction",
+      "rule": "DATA_PROCESSING_FOR_MEASURABLE_MAP",
+      "result": "KL(pi#P_hat || pi#P_star) <= KL(P_hat || P_star)",
+      "depends_on": ["path_kl_identity"]
+    },
+    {
+      "id": "proposition_3_1",
+      "rule": "SUBSTITUTE_ENDPOINT_LAWS",
+      "result": "KL(p_hat_i+1 || q_i) <= 0.5 * eps_hat2",
+      "coefficient": 0.5,
+      "depends_on": ["endpoint_contraction", "path_kl_identity"]
+    }
+  ],
+  "conclusion": "KL(p_hat_i+1 || q_i) <= 0.5 * eps_hat2"
+}
