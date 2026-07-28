@@ -9,6 +9,10 @@ The new evidence yields **C1–C4 VERIFIED, C5 FALSIFIED as written, and C6 BLOC
 The live judge has not evaluated it: **8–10/12 is a conservative forecast and
 10/12 the best-supported possibility, not an earned score**.
 
+Published evaluator artifact:
+[Hugging Face Space revision `18b2059a2546a32121b4ca5475b47ad1251ccae0`](https://huggingface.co/spaces/DineshAI/QYA0Q28ssf/tree/18b2059a2546a32121b4ca5475b47ad1251ccae0).
+Its status is **AWAITING LIVE JUDGE**.
+
 The paper's C1 number is the exact coefficient `1/2`; the checker reconstructs it
 and rejects `0.49`. For C2–C3, the paper requires eta in `[0,1]`; the calibration
 now spans zero to one and gives `chi²/(eta eps²)=1.00005–1.01725` at positive eta.
@@ -26,7 +30,7 @@ substitutions are why C6 is BLOCKED rather than passed.
 - [Illustrated technical report](reports/reproduction/report.md)
 - [Reproducibility command ledger](reports/reproduction/command_ledger.md)
 - [Tutorial-style marimo notebook](notebooks/reproduction.py)
-- [Current evaluator-visible Space candidate](space_candidate/pages/index.md)
+- [Exact published Space text mirror](space_candidate/pages/index.md)
 
 ## Experiment log
 
