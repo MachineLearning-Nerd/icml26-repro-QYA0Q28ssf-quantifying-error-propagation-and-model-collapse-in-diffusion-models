@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Model Collapse Error Propagation",
+  "emoji": "🎯",
+  "space_id": "DineshAI/QYA0Q28ssf",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-QYA0Q28ssf"
+  ],
+  "updated_at": "2026-07-27T17:13:19+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Model Collapse Error Propagation",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "verify",
+        "title": "verify",
+        "file": "pages/verify/page.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 828,
+  "revision": "1785172399294981862"
+}

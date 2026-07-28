@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "source_sha256": "472fb9e246aea7c5d1e643d5755f034f005d1f2bbb61f86371bae855f62765e3",
+  "claim_anchors": ["#S4.Thmtheorem1", "#S4.Thmtheorem2"],
+  "C4": {
+    "floor_requires_uniform_error_floor": true,
+    "steps": [
+      {
+        "id": "refresh",
+        "rule": "EXACT_CHI2_MIXTURE_CONTRACTION",
+        "result": "chi2(q_i||p_data)=(1-alpha)^2*D_i",
+        "depends_on": []
+      },
+      {
+        "id": "innovation",
+        "rule": "SQUARE_LOWER_AND_Q_OVER_PDATA",
+        "coefficient": 0.5,
+        "result": "D_i+1+(1-alpha)^2*D_i>=alpha*I_i/2",
+        "depends_on": ["refresh"]
+      },
+      {
+        "id": "intra_lower",
+        "rule": "THEOREM_3_4_CLEAN_LOWER",
+        "coefficient": 0.125,
+        "result": "I_i>=eta_floor*eps2_i/8",
+        "depends_on": ["A1", "A2", "A3", "A4", "eta_floor", "small_error"]
+      },
+      {
+        "id": "combined_recursion",
+        "rule": "SUBSTITUTE",
+        "coefficient": 0.0625,
+        "result": "D_i+1+r*D_i>=alpha*eta_floor*eps2_i/16",
+        "depends_on": ["innovation", "intra_lower"]
+      },
+      {
+        "id": "sum_recursion",
+        "rule": "FINITE_SUM_AND_REINDEX",
+        "result": "(1+r)*sum(D)>=alpha*eta_floor*sum(eps2)/16-boundary",
+        "depends_on": ["combined_recursion"]
+      },
+      {
+        "id": "non_summability",
+        "rule": "DIVERGENT_LOWER_SERIES",
+        "result": "sum(eps2)=infinity implies sum(D)=infinity",
+        "depends_on": ["sum_recursion"]
+      },
+      {
+        "id": "cesaro_floor",
+        "rule": "UNIFORM_ERROR_FLOOR_AND_CESARO",
+        "coefficient": 0.0625,
+        "result": "liminf average(D)>=alpha*eta_floor*eps2_floor/(16*(1+r))",
+        "depends_on": ["combined_recursion"]
+      },
+      {
+        "id": "limsup_floor",
+        "rule": "LIMSUP_DOMINATES_CESARO_LIMINF",
+        "result": "limsup(D)>=alpha*eta_floor*eps2_floor/(16*(1+r))",
+        "depends_on": ["cesaro_floor"]
+      }
+    ]
+  },
+  "C5": {
+    "asymp_definition": "there exist constants 0<c1<=c2<infinity such that c1*g_N<=f_N<=c2*g_N",
+    "main_statement_C_bias": "strictly_positive_constant",
+    "summability_consequence": "discounted_sum_and_initial_term_tend_to_zero",
+    "nonnegative_divergence_consequence": "D_N+C_bias>=C_bias>0",
+    "appendix_proves_main_equivalence": false,
+    "appendix_actual_result": "two separate additive inequalities with C_bias additive on the upper bound and a signed initial term in the lower bound",
+    "contradiction": "the upper multiplicative asymp inequality requires a positive constant to be at most c2 times a sequence tending to zero",
+    "verdict": "FALSIFIED"
+  }
+}

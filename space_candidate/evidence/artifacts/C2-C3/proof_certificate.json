@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "source_sha256": "472fb9e246aea7c5d1e643d5755f034f005d1f2bbb61f86371bae855f62765e3",
+  "claim_anchors": ["#S3.Thmtheorem3", "#S3.Thmtheorem4"],
+  "assumption_anchors": ["#S3.I1.i1", "#S3.I1.i2", "#S3.I2.i3", "#S3.I2.i4"],
+  "steps": [
+    {
+      "id": "marginal_ratio",
+      "rule": "GIRSANOV_CONDITIONAL_PROJECTION",
+      "result": "R(Y)=E[e^Z|Y]",
+      "depends_on": ["A1", "A2"]
+    },
+    {
+      "id": "taylor_decomposition",
+      "rule": "EXPONENTIAL_REMAINDER_IDENTITY",
+      "result": "R-1=E[Z|Y]+E[exp(Z)-1-Z|Y]",
+      "depends_on": ["marginal_ratio"]
+    },
+    {
+      "id": "young_lower",
+      "rule": "WEIGHTED_YOUNG_NU_HALF",
+      "coefficient": 0.5,
+      "result": "chi2 >= 0.5*E[Zbar^2]-E[Psi^2]",
+      "depends_on": ["taylor_decomposition"]
+    },
+    {
+      "id": "observability_transfer",
+      "rule": "WEIGHTED_YOUNG_THETA_HALF",
+      "coefficient": 0.5,
+      "result": "E[Zbar^2] >= 0.5*eta*eps2-0.25*Kpow*eps4",
+      "depends_on": ["A4", "marginal_ratio"]
+    },
+    {
+      "id": "remainder_control",
+      "rule": "HOLDER_BDG_A3_A4",
+      "result": "E[Psi^2] <= Cprime*eps4",
+      "depends_on": ["A3", "A4", "taylor_decomposition"]
+    },
+    {
+      "id": "proposition_3_3",
+      "rule": "SUBSTITUTE_AND_COLLECT",
+      "coefficient": 0.25,
+      "result": "chi2 >= 0.25*eta*eps2-(Kpow/8+Cprime)*eps4",
+      "depends_on": ["young_lower", "observability_transfer", "remainder_control"]
+    },
+    {
+      "id": "clean_lower",
+      "rule": "APPLY_EPS2_THRESHOLD",
+      "coefficient": 0.125,
+      "result": "eps2<=min(1,eta/(8*C)) implies chi2>=0.125*eta*eps2",
+      "depends_on": ["proposition_3_3"]
+    },
+    {
+      "id": "upper_square",
+      "rule": "ELEMENTARY_SQUARE_UPPER",
+      "coefficient": 2.0,
+      "result": "chi2<=2*E[Zbar^2]+2*E[Psi^2]",
+      "depends_on": ["taylor_decomposition"]
+    },
+    {
+      "id": "signal_second_moment",
+      "rule": "JENSEN_ITO_A4",
+      "coefficient": 2.0,
+      "result": "E[Zbar^2]<=2*eps2+0.5*Kpow*eps4",
+      "depends_on": ["A4", "marginal_ratio"]
+    },
+    {
+      "id": "theorem_3_4_upper",
+      "rule": "SUBSTITUTE_AND_COLLECT",
+      "coefficient": 4.0,
+      "result": "chi2<=4*eps2+(Kpow+2*Cprime)*eps4",
+      "depends_on": ["upper_square", "signal_second_moment", "remainder_control"]
+    },
+    {
+      "id": "two_sided_equivalence",
+      "rule": "POSITIVE_ETA_AND_SMALL_ERROR",
+      "result": "eta>=eta_floor>0 and eps2 small imply chi2 asymp eps2",
+      "depends_on": ["clean_lower", "theorem_3_4_upper"]
+    }
+  ],
+  "conclusions": {
+    "C2": "chi2 >= 0.25 * eta * eps2 - C * eps4",
+    "C2_clean": "if eps2 <= min(1, eta/(8*C)), chi2 >= 0.125 * eta * eps2",
+    "C3_upper": "chi2 <= 4 * eps2 + c * eps4",
+    "C3_equivalence": "if eta >= eta_floor > 0 and eps2 is sufficiently small, chi2 asymp eps2"
+  }
+}

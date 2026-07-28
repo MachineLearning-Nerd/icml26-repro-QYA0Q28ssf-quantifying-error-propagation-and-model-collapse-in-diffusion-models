@@ -1,0 +1,9 @@
+{
+  "claim_id": "C6",
+  "route": 4,
+  "purpose": "Mandatory falsification route after three LOW-confidence attempts.",
+  "exact_claim": "Under the paper's stated recursive protocols and alpha values 0.1, 0.5, and 0.9, low fresh-data fractions show collapse-driven drift while high fresh-data fractions maintain qualitative stability.",
+  "quantifier": "Empirical illustration under the stated finite protocols, not a universal theorem.",
+  "counterexample_acceptance": "Every fixed protocol assumption must be satisfied, the measured observable must be the claimed outcome, and the observation must contradict an explicit ordering or numerical threshold.",
+  "verdict_rule": "One accepted candidate yields FALSIFIED. If every candidate is aligned, assumption-violating, uses a different observable, or lacks a decidable threshold, C6 remains BLOCKED."
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  <text x="55" y="48" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#0f172a">C1: endpoint KL stays below exact path KL</text>
+  <text x="55" y="78" font-family="system-ui,sans-serif" font-size="16" fill="#475569">20,000 trajectories per beta · five fresh seeds · two endpoint estimators</text>
+  <line x1="90" y1="420" x2="950" y2="420" stroke="#64748b" stroke-width="2"/>
+  <line x1="90" y1="110" x2="90" y2="420" stroke="#64748b" stroke-width="2"/>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#334155">
+    <text x="62" y="425">0</text><text x="50" y="322">0.4</text><text x="50" y="219">0.8</text><text x="50" y="116">1.2</text>
+    <text x="205" y="452">beta 0.1</text><text x="470" y="452">beta 0.2</text><text x="735" y="452">beta 0.3</text>
+  </g>
+  <g>
+    <rect x="165" y="384" width="52" height="36" fill="#38bdf8"/><rect x="225" y="375" width="52" height="45" fill="#a78bfa"/><rect x="285" y="410" width="52" height="10" fill="#10b981"/>
+    <rect x="430" y="277" width="52" height="143" fill="#38bdf8"/><rect x="490" y="290" width="52" height="130" fill="#a78bfa"/><rect x="550" y="376" width="52" height="44" fill="#10b981"/>
+    <rect x="695" y="111" width="52" height="309" fill="#38bdf8"/><rect x="755" y="177" width="52" height="243" fill="#a78bfa"/><rect x="815" y="324" width="52" height="96" fill="#10b981"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#0f172a">
+    <rect x="650" y="55" width="18" height="18" fill="#38bdf8"/><text x="676" y="69">exact path KL</text>
+    <rect x="790" y="55" width="18" height="18" fill="#a78bfa"/><text x="816" y="69">kNN endpoint</text>
+    <rect x="650" y="82" width="18" height="18" fill="#10b981"/><text x="676" y="96">logistic endpoint</text>
+  </g>
+</svg>

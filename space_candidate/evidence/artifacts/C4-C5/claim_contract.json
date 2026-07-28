@@ -1,0 +1,12 @@
+{
+  "claim_ids": ["C4", "C5"],
+  "source": "arXiv:2602.16601v2 Proposition 4.1 and Theorem 4.2",
+  "exact_statements": {
+    "C4_i": "Under A1-A4, a uniform positive eta floor, and perturbative errors, sum eps_star_i^2=infinity implies sum D_i=infinity.",
+    "C4_ii": "With the additional eventual floor eps_star_i^2>=eps_floor>0, limsup D_i>=alpha*eta_floor*eps_floor/(16*(1+(1-alpha)^2)).",
+    "C5": "Under A1-A5, a positive eta floor, perturbative and summable errors, there is C_bias>0 such that D_N+1+C_bias is multiplicatively equivalent to the discounted energy sum plus the decayed initial divergence for every N>=i0."
+  },
+  "C4_pass_condition": "The exact recursion and both logically separate clauses are reconstructed; coefficient mutations or removing the uniform floor are rejected; the divergent-series/no-floor control tends to zero while remaining non-summable; the constant-floor sequence attains the paper floor.",
+  "C5_falsification_condition": "Using the paper's own definition of asymp, summability forces the entire right side to zero, while nonnegative divergence and the stated C_bias>0 bound the left side away from zero. An independent checker must reject the falsification if C_bias is changed to zero or added to the right side.",
+  "verdicts": {"C4": "VERIFIED", "C5": "FALSIFIED"}
+}

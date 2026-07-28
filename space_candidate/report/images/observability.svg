@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430">
+  <rect width="1000" height="430" fill="#f8fafc"/>
+  <text x="50" y="48" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#0f172a">C2–C3: calibration no longer assumes eta=1</text>
+  <text x="50" y="78" font-family="system-ui,sans-serif" font-size="16" fill="#475569">Visible and time-orthogonal drift components vary endpoint observability independently</text>
+  <line x1="100" y1="330" x2="930" y2="330" stroke="#64748b" stroke-width="3"/>
+  <g stroke="#94a3b8"><line x1="100" y1="320" x2="100" y2="340"/><line x1="307" y1="320" x2="307" y2="340"/><line x1="515" y1="320" x2="515" y2="340"/><line x1="722" y1="320" x2="722" y2="340"/><line x1="930" y1="320" x2="930" y2="340"/></g>
+  <g font-family="system-ui,sans-serif" font-size="15" fill="#334155" text-anchor="middle"><text x="100" y="365">0</text><text x="307" y="365">0.25</text><text x="515" y="365">0.50</text><text x="722" y="365">0.75</text><text x="930" y="365">1</text></g>
+  <text x="515" y="405" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#334155">observability eta</text>
+  <line x1="100" y1="190" x2="930" y2="190" stroke="#38bdf8" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="190" r="13" fill="#0ea5e9"/><circle cx="183" cy="190" r="13" fill="#0ea5e9"/><circle cx="349" cy="190" r="13" fill="#0ea5e9"/><circle cx="598" cy="190" r="13" fill="#0ea5e9"/><circle cx="930" cy="190" r="13" fill="#0ea5e9"/>
+  <text x="515" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#0369a1">Gaussian control: eta 0 → 1</text>
+  <line x1="100" y1="265" x2="899" y2="265" stroke="#a78bfa" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="265" r="13" fill="#7c3aed"/><circle cx="899" cy="265" r="13" fill="#7c3aed"/>
+  <text x="500" y="240" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#6d28d9">non-Gaussian mixture: eta 0 → 0.962640</text>
+  <text x="50" y="115" font-family="system-ui,sans-serif" font-size="17" fill="#166534">Positive-eta ratio chi²/(eta·eps²): 1.00005–1.01725 · quadrature discrepancy ≤ 6.94e-18</text>
+</svg>

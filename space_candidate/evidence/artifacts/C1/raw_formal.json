@@ -1,0 +1,49 @@
+{
+  "run_id": "3621fc83-117d-44b8-9b88-c04406773d68",
+  "git_sha": "20bf5fed2d69b8b16017516b6bfe70b03b9bf816",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "advertised_vcpu": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 30.757624817080796,
+  "job_duration_seconds": 53,
+  "seeds": [57721, 61169, 65537, 70001, 74959],
+  "certificate": {
+    "accepted": true,
+    "coefficient_0p49_mutation_observed": "REJECT"
+  },
+  "rows": [
+    {
+      "beta": 0.1,
+      "trajectories": 20000,
+      "eps_hat2": 0.28051569283901967,
+      "path_kl": 0.14025784641950984,
+      "logistic_endpoint_kl": 0.0405714993492931,
+      "knn_endpoint_kl": 0.17549051157651133,
+      "no_significant_violation": true,
+      "false_0p1_budget_rejected_by_both_estimators": true
+    },
+    {
+      "beta": 0.2,
+      "trajectories": 20000,
+      "eps_hat2": 1.093875740575127,
+      "path_kl": 0.5469378702875635,
+      "logistic_endpoint_kl": 0.16823898453679503,
+      "knn_endpoint_kl": 0.4969450572321393,
+      "no_significant_violation": true,
+      "false_0p1_budget_rejected_by_both_estimators": true
+    },
+    {
+      "beta": 0.3,
+      "trajectories": 20000,
+      "eps_hat2": 2.394588048363132,
+      "path_kl": 1.197294024181566,
+      "logistic_endpoint_kl": 0.37048935673315614,
+      "knn_endpoint_kl": 0.9401972872066919,
+      "no_significant_violation": true,
+      "false_0p1_budget_rejected_by_both_estimators": true
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "label": "Historical rejected route",
+  "experiment_id": "026f5802-ea3f-4ed3-a6c6-f57b26069b67",
+  "run_id": "1f08b17d-e6e3-4a9b-9270-ec167721dd4f",
+  "git_sha": "9debb483e7bc38f17b4d741fc9bb2c4a40d472f2",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "advertised_vcpu": 8,
+  "container_reported_affinity_cpu": 64,
+  "runtime_seconds": 53,
+  "seeds": [1729, 2718, 31415, 16180, 14142],
+  "reason_rejected": "The pre-registered rule required every noisy endpoint estimator's upper 95% confidence value to be below the path bound. This is not a valid one-sided test for a contradiction and failed for the high-dimensional kNN estimator.",
+  "rows": [
+    {
+      "beta": 0.1,
+      "path_kl": 0.1403259692241351,
+      "logistic_estimate": 0.044381712032585764,
+      "logistic_standard_error": 0.002168569082238382,
+      "knn_estimate": 0.1942600389404778,
+      "knn_standard_error": 0.033479939947708016
+    },
+    {
+      "beta": 0.2,
+      "path_kl": 0.547307967851564,
+      "logistic_estimate": 0.17523247126740094,
+      "logistic_standard_error": 0.004055259981273222,
+      "knn_estimate": 0.5154408450035554,
+      "knn_standard_error": 0.034138339863426244
+    },
+    {
+      "beta": 0.3,
+      "path_kl": 1.1982059064321202,
+      "logistic_estimate": 0.3796238931833037,
+      "logistic_standard_error": 0.005784220589709928,
+      "knn_estimate": 0.9678233393246622,
+      "knn_standard_error": 0.035146336836065
+    }
+  ],
+  "scientific_conclusion": "Not a counterexample. At beta=0.1 the kNN point excess was 1.61 standard errors, below the pre-specified one-sided 5% violation threshold used in the descendant confirmation."
+}

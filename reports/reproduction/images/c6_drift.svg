@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  <text x="55" y="48" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#0f172a">C6 route 1: GMM drift is ordered by fresh-data fraction</text>
+  <text x="55" y="80" font-family="system-ui,sans-serif" font-size="16" fill="#475569">Generation 20 · 10 seeds · N=100,000 · population-KDE closure</text>
+  <line x1="100" y1="420" x2="930" y2="420" stroke="#64748b" stroke-width="2"/>
+  <line x1="100" y1="110" x2="100" y2="420" stroke="#64748b" stroke-width="2"/>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <rect x="180" y="125" width="150" height="295" fill="#f97316"/><text x="255" y="112" font-size="22" font-weight="700" fill="#9a3412">+108.38%</text><text x="255" y="452" font-size="17" fill="#334155">alpha 0.1</text>
+    <rect x="430" y="353" width="150" height="67" fill="#f59e0b"/><text x="505" y="340" font-size="22" font-weight="700" fill="#92400e">+24.72%</text><text x="505" y="452" font-size="17" fill="#334155">alpha 0.5</text>
+    <rect x="680" y="383" width="150" height="37" fill="#10b981"/><text x="755" y="370" font-size="22" font-weight="700" fill="#065f46">+13.77%</text><text x="755" y="452" font-size="17" fill="#334155">alpha 0.9</text>
+  </g>
+  <text x="590" y="118" font-family="system-ui,sans-serif" font-size="14" fill="#7c2d12">h=0 control: no alpha-dependent accumulation</text>
+  <text x="590" y="143" font-family="system-ui,sans-serif" font-size="14" fill="#7c2d12">BLOCKED: substituted solver; image protocols missing</text>
+</svg>

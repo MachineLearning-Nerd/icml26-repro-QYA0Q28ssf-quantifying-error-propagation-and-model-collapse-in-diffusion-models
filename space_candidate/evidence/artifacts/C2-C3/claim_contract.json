@@ -1,0 +1,10 @@
+{
+  "claim_ids": ["C2", "C3"],
+  "source": "arXiv:2602.16601v2 Proposition 3.3 and Theorem 3.4",
+  "exact_statements": {
+    "C2": "Under A1-A4, for every i>=i0 with eps_star_i^2<=1, chi2(p_hat^{i+1}||q_i) >= eta_i*eps_star_i^2/4 - C*eps_star_i^4. If eps_star_i^2<=min(1,eta_i/(8C)), the clean lower bound is eta_i*eps_star_i^2/8.",
+    "C3": "Under A1-A4, the same lower bound and chi2<=4*eps_star_i^2+c*eps_star_i^4 hold; if eta_i has a positive uniform floor and error is sufficiently small, chi2 is equivalent to eps_star_i^2."
+  },
+  "pass_condition": "The symbolic rule checker accepts both complete derivations with exact coefficients 1/4, 1/8, and 4; rejects independent lower- and upper-coefficient mutations; all exact diffusion calibration rows audit A1-A4 and the perturbative condition; eta=0 is a vacuous edge control; positive eta spans partial observability; the non-Gaussian mixture rows satisfy both theorem sides; false 1.10*eta lower and false 0.50*eps2 upper controls are detected; cumulative runner exits zero.",
+  "verdict_rule": "VERIFIED requires the proof certificate. Finite Gaussian and mixture calculations are scoped corroboration only."
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "aa8213ff-934e-4c9b-b898-669f3e7859a7",
+  "git_sha": "6bdd221a95fa1782cc0816d79aaaf3e0a63f5ea6",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "advertised_vcpu": 8,
+  "active_worker_processes": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 34.79418932599947,
+  "job_duration_seconds": 58,
+  "headline": {
+    "alpha_0p1_relative_total_second_moment_drift": 1.0837670400008657,
+    "alpha_0p5_relative_total_second_moment_drift": 0.24716661661386174,
+    "alpha_0p9_relative_total_second_moment_drift": 0.13769247179798083,
+    "dispersion_ci_order": "alpha 0.1 > 0.5 > 0.9",
+    "maximum_sample_population_z": 1.922209961415048,
+    "h_zero_control": "no alpha-dependent accumulation"
+  },
+  "assessment": "ALIGNED_ON_POPULATION_KDE_GMM_ONLY",
+  "C6_verdict": "BLOCKED"
+}

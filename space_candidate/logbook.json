@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Model Collapse Error Propagation",
+  "emoji": "🎯",
+  "space_id": "DineshAI/QYA0Q28ssf",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-QYA0Q28ssf"
+  ],
+  "updated_at": "2026-07-28T12:00:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Current claim-by-claim reproduction",
+    "file": "pages/index.md",
+    "children": [
+      {"slug": "c1", "title": "C1 — VERIFIED", "file": "pages/claims/c1.md", "children": []},
+      {"slug": "c2", "title": "C2 — VERIFIED", "file": "pages/claims/c2.md", "children": []},
+      {"slug": "c3", "title": "C3 — VERIFIED", "file": "pages/claims/c3.md", "children": []},
+      {"slug": "c4", "title": "C4 — VERIFIED", "file": "pages/claims/c4.md", "children": []},
+      {"slug": "c5", "title": "C5 — FALSIFIED", "file": "pages/claims/c5.md", "children": []},
+      {"slug": "c6", "title": "C6 — BLOCKED", "file": "pages/claims/c6.md", "children": []},
+      {"slug": "method", "title": "Implementation and provenance", "file": "pages/method.md", "children": []},
+      {"slug": "report", "title": "Illustrated report", "file": "report/report.md", "children": []},
+      {"slug": "release", "title": "Forecast and limitations", "file": "pages/release.md", "children": []},
+      {"slug": "visibility", "title": "Evaluator-blind audit", "file": "pages/visibility.md", "children": []},
+      {
+        "slug": "historical",
+        "title": "Historical rejected baseline",
+        "file": "pages/historical.md",
+        "children": [
+          {"slug": "verify", "title": "Historical rejected baseline — verify", "file": "pages/verify/page.md", "children": []},
+          {"slug": "overview", "title": "Historical rejected baseline — overview", "file": "pages/overview/page.md", "children": []}
+        ]
+      }
+    ]
+  },
+  "agent_view_tokens": 8200,
+  "revision": "claim-by-claim-2026-07-28"
+}
