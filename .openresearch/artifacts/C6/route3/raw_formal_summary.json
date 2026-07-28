@@ -1,0 +1,19 @@
+{
+  "run_id": "2c36e0df-98f1-417d-9090-d51c11e2c5c8",
+  "git_sha": "6784a9e14d5b65a02b7921cd736e0d0b980c1ed7",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "estimated_cpu_workers": 8,
+  "advertised_vcpu": 8,
+  "active_torch_threads": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 42.70143635594286,
+  "job_duration_seconds": 69,
+  "missing_cifar_protocol_fields": 20,
+  "missing_direct_tradeoff_evidence_items": 4,
+  "positive_evidence_preserved": "Figure 9 eta approximately 0.25-0.35",
+  "negative_control": "complete mock CIFAR protocol passed",
+  "C6_verdict": "BLOCKED"
+}
