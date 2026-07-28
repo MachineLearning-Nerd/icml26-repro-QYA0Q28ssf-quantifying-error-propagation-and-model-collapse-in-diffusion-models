@@ -10,6 +10,7 @@ This is the pre-publication navigation surface. The immutable judged Space revis
 - [C3 — Theorem 3.4](claims/c3.md)
 - [C4 — Proposition 4.1](claims/c4.md)
 - [C5 — Theorem 4.2](claims/c5.md)
+- [C6 — empirical alpha tradeoff](claims/c6.md)
 
 ## Historical rejected baseline
 

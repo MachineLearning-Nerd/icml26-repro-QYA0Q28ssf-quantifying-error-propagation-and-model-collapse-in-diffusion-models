@@ -1,0 +1,15 @@
+{
+  "claim_id": "C6",
+  "route": 1,
+  "interpretation": "The alpha tradeoff should appear in the 10D GMM under the population limit of the paper's h=0.6 KDE score estimator.",
+  "paper_scale": {
+    "dimension": 10,
+    "components": 5,
+    "N": 100000,
+    "generations": 20,
+    "alphas": [0.1, 0.5, 0.9],
+    "independent_runs": 10
+  },
+  "pass_condition": "At generation 20, 95% confidence intervals for within-component dispersion are strictly ordered alpha 0.1 > 0.5 > 0.9; stochastic samples agree with the independently derived population closure within six standard errors; setting h=0 removes the tradeoff; cumulative runner exits zero.",
+  "verdict_rule": "Even a passing route remains BLOCKED for full C6 because it replaces the finite empirical KDE and 500-step solver and does not run either image dataset."
+}

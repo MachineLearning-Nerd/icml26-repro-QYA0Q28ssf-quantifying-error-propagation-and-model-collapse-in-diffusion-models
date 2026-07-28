@@ -1,0 +1,27 @@
+{
+  "run_id": "1a6f4c55-710c-44cb-b108-e281f7f6ce80",
+  "git_sha": "a6ace14d8ab3a444861e439e687da44af80586fd",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "advertised_vcpu": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 33.246751482831314,
+  "job_duration_seconds": 58,
+  "verdicts": {"C4": "VERIFIED", "C5": "FALSIFIED"},
+  "C4": {
+    "paper_floor_alpha_0p1": 0.000017265193370165747,
+    "paper_floor_alpha_0p5": 0.000125,
+    "paper_floor_alpha_0p9": 0.0002784653465346535,
+    "divergent_series_without_floor_control": "D_i tends to zero and sum D_i diverges",
+    "uniform_floor_mutation": "REJECT"
+  },
+  "C5": {
+    "minimum_required_asymp_constant_alpha_0p1_N10": 26.836279221595436,
+    "minimum_required_asymp_constant_alpha_0p1_N160": 1429669946236718.8,
+    "C_bias_zero_mutation": "REJECT_FALSIFICATION",
+    "C_bias_on_rhs_mutation": "REJECT_FALSIFICATION",
+    "scope": "Theorem 4.2 as written; appendix additive inequalities not challenged"
+  }
+}
