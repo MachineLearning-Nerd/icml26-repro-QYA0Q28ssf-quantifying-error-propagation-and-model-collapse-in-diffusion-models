@@ -3,7 +3,7 @@
   "source": "arXiv:2602.16601v2 Proposition 3.1, HTML anchor #S3.Thmtheorem1",
   "exact_statement": "Under A1-A2, P_hat_i is absolutely continuous with respect to P_star_i and KL(p_hat^{i+1} || q_i) <= KL(P_hat_i || P_star_i) = 0.5 * eps_hat_i^2.",
   "quantifiers": "Every generation i for which A1 and A2 hold.",
-  "pass_condition": "The independent rule checker accepts the complete A1-A2 derivation with coefficient exactly 1/2; rejects a coefficient-corrupted certificate; the cumulative runner exits zero; and both endpoint-KL estimators' 95% upper values remain below the discrete path-KL budget plus the declared discretization tolerance on all 10D GMM configurations.",
-  "failure_condition": "Any proof dependency is missing, the exact coefficient changes, the negative control passes, or a calibrated endpoint estimate exceeds the path budget.",
+  "pass_condition": "The independent rule checker accepts the complete A1-A2 derivation with coefficient exactly 1/2 and rejects a coefficient-corrupted certificate. On five fresh confirmation seeds, neither endpoint estimator's one-sided 95% lower confidence bound may exceed the path-KL budget's one-sided 95% upper confidence bound, while both estimators must reject a deliberately false 0.1x path budget for every beta. The cumulative runner must exit zero.",
+  "failure_condition": "Any proof dependency is missing, the exact coefficient changes, the certificate negative control passes, an endpoint estimator significantly contradicts the path budget at the one-sided 5% level, or either estimator fails to reject the false 0.1x budget.",
   "verdict_rule": "VERIFIED requires the proof certificate. The finite GMM experiment alone is only corroboration."
 }

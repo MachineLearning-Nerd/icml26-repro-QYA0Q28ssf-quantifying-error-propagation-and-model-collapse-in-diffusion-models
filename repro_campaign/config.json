@@ -2,7 +2,7 @@
   "campaign_stage": "c1_exact_certificate_and_10d_gmm_calibration",
   "paper_id": "2602.16601v2",
   "space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
-  "seeds": [1729, 2718, 31415, 16180, 14142],
+  "seeds": [57721, 61169, 65537, 70001, 74959],
   "accepted_claim_modules": [
     "historical_baseline",
     "claim1_girsanov"

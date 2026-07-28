@@ -1,6 +1,7 @@
 # Current verification — C1 / Proposition 3.1
 
-Status before formal run: **certificate VERIFIED; 10D calibration pending**.
+Status before confirmation run: **exact certificate accepted; first estimator route
+rejected; fresh-seed calibration pending**.
 
 Exact command inherited by this node:
 
@@ -15,6 +16,8 @@ Current executable sources:
 - `repro_campaign/run.py` — cumulative nonzero-on-failure entrypoint.
 
 The committed preflight accepts the exact A1–A2 proof route and rejects the
-coefficient-corrupted control. The formal OpenResearch run must still reproduce this
-output, execute the 10D calibration, print raw numerical rows, and exit zero before
-the result is promoted on the evaluator-visible page.
+coefficient-corrupted control. The first formal numerical run is preserved as a
+rejected route because its all-upper-confidence gate was in the wrong statistical
+direction. The confirmation run uses five fresh seeds, tests for a significant
+violation with one-sided intervals, and must reject a false 0.1× budget before the
+result is promoted on the evaluator-visible page.

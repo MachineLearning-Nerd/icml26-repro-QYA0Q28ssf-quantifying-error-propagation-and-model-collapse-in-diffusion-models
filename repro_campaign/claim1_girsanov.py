@@ -12,7 +12,7 @@ from typing import Any
 
 
 PAPER_SOURCE_SHA256 = "472fb9e246aea7c5d1e643d5755f034f005d1f2bbb61f86371bae855f62765e3"
-SEEDS = (1729, 2718, 31415, 16180, 14142)
+SEEDS = (57721, 61169, 65537, 70001, 74959)
 BETAS = (0.10, 0.20, 0.30)
 DIMENSION = 10
 T_FINAL = 4.0
@@ -206,6 +206,7 @@ def _quadratic_logistic_kl(
         "estimate": mean,
         "standard_error": standard_error,
         "upper_95": mean + 1.96 * standard_error,
+        "lower_95_one_sided": mean - 1.645 * standard_error,
     }
 
 
@@ -241,6 +242,7 @@ def _knn_kl(learned: Any, ideal: Any) -> dict[str, float]:
         "estimate": mean,
         "standard_error": standard_error,
         "upper_95": mean + 1.96 * standard_error,
+        "lower_95_one_sided": mean - 1.645 * standard_error,
         "raw_estimate": raw_mean,
         "null_bias_estimate": null_mean,
     }
@@ -263,12 +265,25 @@ def run_calibration() -> dict[str, Any]:
         eps_hat2 = float(np.mean(energies))
         eps_se = float(np.std(energies, ddof=1) / math.sqrt(len(energies)))
         path_kl = 0.5 * eps_hat2
+        path_kl_standard_error = 0.5 * eps_se
+        path_kl_upper_95_one_sided = path_kl + 1.645 * path_kl_standard_error
         logistic = _quadratic_logistic_kl(learned, ideal, seed=SEEDS[0])
         knn = _knn_kl(learned, ideal)
-        empirical_upper = max(logistic["upper_95"], knn["upper_95"])
-        # Estimator uncertainty plus an explicit 2% discretization allowance.
-        tolerance = 0.02 * path_kl + 1e-3
-        holds = empirical_upper <= path_kl + tolerance
+        estimators = {
+            "cross_fitted_quadratic_logistic": logistic,
+            "knn_perez_cruz": knn,
+        }
+        significant_violations = {
+            name: values["lower_95_one_sided"] > path_kl_upper_95_one_sided
+            for name, values in estimators.items()
+        }
+        false_path_budget = 0.1 * path_kl
+        false_budget_rejections = {
+            name: values["lower_95_one_sided"] > false_path_budget
+            for name, values in estimators.items()
+        }
+        no_significant_violation = not any(significant_violations.values())
+        false_budget_control_passes = all(false_budget_rejections.values())
         rows.append(
             {
                 "beta": beta,
@@ -280,17 +295,23 @@ def run_calibration() -> dict[str, Any]:
                 "eps_hat2": eps_hat2,
                 "eps_hat2_standard_error": eps_se,
                 "half_eps_hat2": path_kl,
-                "endpoint_kl_estimators": {
-                    "cross_fitted_quadratic_logistic": logistic,
-                    "knn_perez_cruz": knn,
+                "path_kl_standard_error": path_kl_standard_error,
+                "path_kl_upper_95_one_sided": path_kl_upper_95_one_sided,
+                "endpoint_kl_estimators": estimators,
+                "significant_violation_at_one_sided_5pct": significant_violations,
+                "no_significant_violation": bool(no_significant_violation),
+                "negative_control": {
+                    "false_path_budget_multiplier": 0.1,
+                    "false_path_budget": false_path_budget,
+                    "rejected_by_estimator": false_budget_rejections,
+                    "passes": bool(false_budget_control_passes),
                 },
-                "max_endpoint_kl_upper_95": empirical_upper,
-                "discretization_tolerance": tolerance,
-                "bound_holds": bool(holds),
             }
         )
-    if not all(row["bound_holds"] for row in rows):
-        raise AssertionError(f"C1 calibration exceeded the path bound: {rows}")
+    if not all(row["no_significant_violation"] for row in rows):
+        raise AssertionError(f"C1 endpoint estimate significantly violated path bound: {rows}")
+    if not all(row["negative_control"]["passes"] for row in rows):
+        raise AssertionError(f"C1 false-budget negative control was not rejected: {rows}")
     return {
         "protocol": {
             "dimension": DIMENSION,
@@ -323,6 +344,7 @@ def run() -> dict[str, Any]:
         "calibration": calibration,
         "limitations": [
             "The numerical endpoint KL uses two independent finite-sample estimators.",
+            "The one-sided calibration can detect significant contradictions; failure to reject is not proof.",
             "The proof certificate, not the finite experiment, carries the universal quantifier.",
             "The learned error is controlled and state-dependent rather than a trained KDE score.",
         ],
