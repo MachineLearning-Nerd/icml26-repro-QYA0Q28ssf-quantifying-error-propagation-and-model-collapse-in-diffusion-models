@@ -1,0 +1,7 @@
+{
+  "claim_id": "C6",
+  "route": 2,
+  "interpretation": "Attempt a faithful Fashion-MNIST reproduction only if the source defines a unique model/sampler and quantify a conservative CPU lower bound from the stated workload.",
+  "pass_condition": "All architecture, sampler, data, seed, and stopping fields needed for a unique implementation must be present; otherwise mark BLOCKED. A fully specified mock protocol must pass the same schema checker. Benchmark a network strictly smaller than the described U-Net and project the stated workload without claiming it is the experiment.",
+  "verdict_rule": "Missing material fields or infeasible faithful CPU scope produces BLOCKED, never PASS or falsification."
+}
