@@ -1,11 +1,12 @@
 {
-  "campaign_stage": "c2_c3_observability_certificates_and_non_gaussian_calibration",
+  "campaign_stage": "c4_persistence_proof_and_c5_bias_falsification",
   "paper_id": "2602.16601v2",
   "space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
   "seeds": [57721, 61169, 65537, 70001, 74959],
   "accepted_claim_modules": [
     "historical_baseline",
     "claim1_girsanov",
-    "claim23_observability"
+    "claim23_observability",
+    "claim45_global"
   ]
 }

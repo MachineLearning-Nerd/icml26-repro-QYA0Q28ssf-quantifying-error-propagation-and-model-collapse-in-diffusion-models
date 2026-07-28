@@ -1,0 +1,30 @@
+{
+  "run_id": "29594092-3b31-4ea6-ac75-57b13f571bbe",
+  "git_sha": "82ebd6a282101409cde92fbf81fb1dedbd08a386",
+  "fixed_command": "uv run --frozen python -m repro_campaign.run",
+  "backend": "hf",
+  "flavor": "cpu-upgrade",
+  "advertised_vcpu": 8,
+  "container_logical_cpu_count": 64,
+  "container_affinity_cpu_count": 64,
+  "runner_runtime_seconds": 33.532168853096664,
+  "job_duration_seconds": 59,
+  "proof": {
+    "accepted": true,
+    "lower_coefficient_mutation": "REJECT",
+    "upper_coefficient_mutation": "REJECT"
+  },
+  "calibration": {
+    "families": ["gaussian_endpoint_control", "symmetric_two_component_mixture"],
+    "rho_values": [0.0, 0.1, 0.3, 0.6, 1.0],
+    "beta_values": [0.02, 0.05, 0.1, 0.2],
+    "non_gaussian_fisher_information": 0.9626402823408684,
+    "non_gaussian_eta_range": [0.0, 0.9626402823408684],
+    "positive_eta_chi2_over_eta_eps2_range": [1.00005, 1.01725],
+    "maximum_quadrature_disagreement": 6.938893903907228e-18,
+    "all_A1_A4_audits_pass": true,
+    "false_1p10_eta_lower_detected": true,
+    "false_0p50_eps2_upper_detected": true
+  },
+  "verdicts": {"C2": "VERIFIED", "C3": "VERIFIED"}
+}

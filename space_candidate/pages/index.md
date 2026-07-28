@@ -8,6 +8,8 @@ This is the pre-publication navigation surface. The immutable judged Space revis
 - [C1 — Proposition 3.1](claims/c1.md)
 - [C2 — Proposition 3.3](claims/c2.md)
 - [C3 — Theorem 3.4](claims/c3.md)
+- [C4 — Proposition 4.1](claims/c4.md)
+- [C5 — Theorem 4.2](claims/c5.md)
 
 ## Historical rejected baseline
 
