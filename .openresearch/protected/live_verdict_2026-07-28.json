@@ -1,0 +1,20 @@
+{
+  "dataset": "ICML-2026-agent-repro/verdicts",
+  "dataset_revision": "c0fdb322c5d00a54bf99651f59f47f6b6c6406ae",
+  "filter": {
+    "space_id": "DineshAI/QYA0Q28ssf"
+  },
+  "judged_at": "2026-07-27T19:53:20+00:00",
+  "judge_model": "zai-org/GLM-5.2",
+  "judge_space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
+  "score": "5/12",
+  "claim_verdicts": {
+    "C1": "toy",
+    "C2": "toy",
+    "C3": "toy",
+    "C4": "toy",
+    "C5": "toy",
+    "C6": "inconclusive"
+  },
+  "overall": "The judged artifact uses a 1D Gaussian mean-shift proxy with eta=1 and defers every trained-score or real-data experiment."
+}

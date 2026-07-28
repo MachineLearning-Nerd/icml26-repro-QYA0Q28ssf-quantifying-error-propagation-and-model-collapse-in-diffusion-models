@@ -1,0 +1,14 @@
+{
+  "claim_id": "baseline-regression",
+  "purpose": "Freeze the live judged artifact before faithful research changes.",
+  "expected_scientific_status": {
+    "C1": "TOY",
+    "C2": "TOY",
+    "C3": "TOY",
+    "C4": "TOY",
+    "C5": "TOY",
+    "C6": "BLOCKED"
+  },
+  "pass_condition": "The runner reproduces the historical numerical sanity checks, preserves their weak statuses, detects the deliberately incorrect KL equality, and exits zero.",
+  "failure_condition": "Any historical check regresses, any status is promoted, or the negative control passes."
+}

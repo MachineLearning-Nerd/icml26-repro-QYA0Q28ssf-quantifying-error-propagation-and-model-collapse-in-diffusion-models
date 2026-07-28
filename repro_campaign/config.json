@@ -1,0 +1,9 @@
+{
+  "campaign_stage": "historical_rejected_baseline",
+  "paper_id": "2602.16601v2",
+  "space_revision": "49401cddb554d5c3f7ae98d400567b8d6f10c028",
+  "seeds": [1729],
+  "accepted_claim_modules": [
+    "historical_baseline"
+  ]
+}
